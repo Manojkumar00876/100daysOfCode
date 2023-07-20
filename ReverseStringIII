@@ -1,0 +1,29 @@
+class Solution {
+    public String reverseWords(String s) {
+
+        Stack <Character> st = new Stack<>();
+        String specialChars = "/*!@#$%^&*()\"{}_[]|\\?/<>,.";
+        StringBuilder sb = new StringBuilder();
+        String temp = "";
+      for(int i=0; i<s.length(); i++) {
+          char ch = s.charAt(i);
+
+          if( !Character.isSpace(ch) ) {
+          st.push(ch);
+          }
+          else {
+             while(st.size() > 0) {
+                 temp+=st.pop();
+             }
+             sb.append(temp+" ");
+             temp="";
+          }
+      }
+         while(st.size() > 0) {  
+              temp+=st.pop();
+             }
+             sb.append(temp);
+
+         return sb.toString();
+    }
+}
