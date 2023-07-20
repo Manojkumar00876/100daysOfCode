@@ -1,0 +1,15 @@
+  static char nonrepeatingCharacter(String S)
+    {
+        HashMap <Character , Integer> map = new LinkedHashMap<>();
+        
+        for(char x : S.toCharArray()) {
+            map.put(x,map.getOrDefault(x,0)+1);
+        }
+        
+        for(char x : map.keySet()) {
+            if(map.get(x) == 1){
+                return x;
+            }
+        }
+        return '$';
+    }
