@@ -1,0 +1,50 @@
+/*
+class Node
+{
+    int data;
+    Node next;
+    Node(int data)
+    {
+        this.data = data;
+        next = null;
+    }
+}
+*/
+class Solution
+{
+    //Function to sort a linked list of 0s, 1s and 2s.
+    static Node segregate(Node head)
+    {
+       HashMap<Integer,Integer>mp=new HashMap<>();
+        Node temp=head;
+        while(temp!=null){
+            if(mp.containsKey(temp.data)){
+                mp.put(temp.data,mp.get(temp.data)+1);
+            }else{
+                mp.put(temp.data,1);
+            }
+            temp=temp.next;
+        }
+        temp=head;
+        while(temp!=null){
+            if(mp.containsKey(0)){
+                temp.data=0;
+                mp.put(0,mp.get(0)-1);
+                if(mp.get(0)==0)mp.remove(0);
+            }
+            else if(mp.containsKey(1)){
+                temp.data=1;
+                mp.put(1,mp.get(1)-1);
+                if(mp.get(1)==0)mp.remove(1);
+            }
+            else{
+                temp.data=2;
+                mp.put(2,mp.get(2)-1);
+                if(mp.get(2)==0)mp.remove(2);
+            }
+            temp=temp.next;
+        }
+        return head;
+    }
+}
+
