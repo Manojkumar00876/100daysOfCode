@@ -1,0 +1,33 @@
+class Solution {
+    public String decodeMessage(String key, String message) {
+        String alphabets = "abcdefghijklmnopqrstuvwxyz";
+       LinkedHashMap<Character,Character> map = new LinkedHashMap<>();
+        key = key.replace(" ","");
+        char letters = 97;
+          char chh = 'a';
+        // for(int i=0; i<key.length(); i++) {
+        //     char ch = key.charAt(i);
+        //     map.put(ch,letters++);
+        // }
+          for(char i : key.toCharArray()){
+            if(map.containsKey(i) == false)
+                map.put(i,chh++);
+        }
+
+
+        StringBuilder sb = new StringBuilder();
+
+        for(int i=0; i<message.length() ; i++) {
+
+            char ch = message.charAt(i);
+           if(Character.isLetter(ch)){
+            sb.append(map.get(ch));
+           }
+           else {
+               sb.append(' ');
+           }
+        }
+        return sb.toString();
+        
+    }
+}
