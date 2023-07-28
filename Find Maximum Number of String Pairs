@@ -1,0 +1,18 @@
+class Solution {
+    static String reverse (String s) {
+        StringBuilder sb = new StringBuilder(s);
+        return sb.reverse().toString();
+    }
+    public int maximumNumberOfStringPairs(String[] words) {
+        int count=0;
+        HashMap <String , String> map = new HashMap<>();
+        for(String x : words){
+            if(map.size() >0 && map.containsValue(x)){
+                count++;
+            }
+            map.put(x , reverse(x));
+        }
+
+        return count;
+    }
+}
