@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main
+{
+    static void swap(int[] arr , int i , int j) {
+       int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+  public static void main (String[]args)
+  {
+    int[] arr = {-12, 11, -13, -5, 6, -7, 5, -3, -6};
+
+   for(int x : arr){
+        System.out.print(x+" ");
+    }
+     System.out.println();
+    int start = 0;
+    int end = arr.length-1;
+    
+    while(true){
+    while(start < end && arr[start] < 0){
+        start++;
+    }
+    while(start < end && arr[end] > 0) {
+        end--;
+    }
+    
+    if(start < end){
+        swap(arr,start , end);
+    }
+    else{
+        break;
+    }
+    }
+    
+    for(int x : arr){
+        System.out.print(x+" ");
+    }
+  }
+}
