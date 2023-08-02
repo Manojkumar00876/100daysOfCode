@@ -1,0 +1,30 @@
+class Solution {
+     static void func (int[] arr , int i , List< List <Integer>>  list , List <Integer> temp
+    , int sum ) {
+       
+           if(sum == 0) {
+              list.add(new ArrayList<>(temp));
+              return;
+           }
+          
+      for(int ind = i; ind<arr.length; ind++) {
+         if(i < ind && arr[ind] == arr[ind-1]) continue;
+
+         if(arr[ind] > sum) break;
+
+         temp.add(arr[ind]);
+         func( arr , ind+1 , list , temp , sum-arr[ind]);
+         temp.remove(temp.size()-1);
+      } 
+      
+        
+    }
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+       Arrays.sort(candidates);
+       List < List<Integer>> list = new ArrayList<>();
+       List<Integer> temp = new ArrayList<>();
+       func(candidates , 0 , list , temp , target );
+
+       return list;   
+    }
+}
