@@ -1,0 +1,27 @@
+class Solution {
+    public int countConsistentStrings(String allowed, String[] words) {
+        int flag = 0;
+        int count = 0;
+        for (String word : words) {
+            for (int j = 0; j < word.length(); j++) {
+                for (int k = 0; k < allowed.length(); k++) {
+                    if (word.charAt(j) == allowed.charAt(k)) {
+                        flag = 0;
+                        break;
+                    } else {
+                        flag = flag + 1;
+                    }
+                }
+                if (flag > 0) {
+                    break;
+                }
+            }
+            if (flag == 0) {
+                count = count + 1;
+            }
+            flag = 0;
+        }
+
+        return count;
+    }
+}
