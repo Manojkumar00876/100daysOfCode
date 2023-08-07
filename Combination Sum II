@@ -3,7 +3,7 @@ class Solution {
     , int sum ) {
        
            if(sum == 0) {
-              list.add(new ArrayList<>(temp));
+              list.add(new ArrayList<>(temp)) ;
               return;
            }
           
