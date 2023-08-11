@@ -1,0 +1,14 @@
+
+public class Main
+{
+	public static void main(String[] args) {
+	String s = "PPPPP@PPP$PPPPP@PP$P";
+	StringBuilder sb = new StringBuilder();
+
+	String[] ans = s.split("[$@]");
+	for(String x : ans){
+	    System.out.println(x);
+	}
+   
+	}
+}
