@@ -8,7 +8,7 @@ public class LongSubarrayWithKFrequency {
     }
 
     public static int maxSubarrayLength(int[] nums, int k) {
-
+    // sliding qindow
         int l=0;
         HashMap <Integer,Integer> map = new HashMap<>();
         int result=-1;
