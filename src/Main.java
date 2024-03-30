@@ -62,36 +62,3 @@ class Solution {
 //        return result;
 //    }
 //}
-
-//class Solution {
-//    public long maximumSubarraySum(int[] nums, int k) {
-//        HashSet<Integer> set = new HashSet<>();
-//        int j = 0;
-//        int sum = 0;
-//        int result = -1;
-//
-//        for (int i = 0; i < nums.length; i++) {
-//            // 1, 5, 4, 2, 9, 9, 9
-//            set.add(nums[i]);
-//            sum += nums[i];
-//            System.out.println("s----->"+i+ " " +sum);
-//            while ( set.size() > k) {
-//                System.out.println(i+ "--->" +set);
-//                sum = sum-nums[i];
-//                set.remove(nums[j]);
-//                j++;
-//                System.out.println(i + "---> sum " + sum);
-//
-//            }
-//            System.out.println("after"+ "--->" +set);
-//                System.out.println(i+1 + "---> sum " + sum);
-//                result = Math.max(result, sum);
-////                System.out.println(i+1 + "---> result " + result);
-//
-//        }
-//
-//        return result; // return the result instead of sum
-//    }
-//}
-//
-
